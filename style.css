@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #fdf6ec;
+  color: #3b2c22;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #3b2c22;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #d9a566;
+}
+
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background-color: #f1e2c9;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+button {
+  background-color: #3b2c22;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #d9a566;
+}
+
+.menu, .nosotros, .contacto {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.menu h2, .nosotros h2, .contacto h2 {
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+/* Botones de categoría */
+.categorias {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cat-btn {
+  font-size: 17px;
+  padding: 16px 30px;
+}
+
+/* Lista de menú */
+.carrusel-container {
+  display: none; /* se muestra con JS al elegir categoría */
+  margin-top: 20px;
+}
+
+.btn-volver {
+  margin-bottom: 25px;
+  background-color: transparent;
+  color: #3b2c22;
+  border: 2px solid #3b2c22;
+}
+
+.btn-volver:hover {
+  background-color: #3b2c22;
+  color: white;
+}
+
+.lista-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  overflow: hidden;
+  padding: 10px;
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.card .card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card h3 {
+  font-size: 16px;
+}
+
+.card p {
+  color: #a06a2c;
+  font-weight: bold;
+}
+
+.nosotros {
+  background-color: #f1e2c9;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Redes sociales */
+.redes {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+}
+
+.redes a {
+  text-decoration: none;
+  color: #3b2c22;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.redes a:hover {
+  color: #d9a566;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+  gap: 15px;
+}
+
+input, textarea {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+#mensajeConfirmacion {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #3b2c22;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #3b2c22;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .hero h1 {
+    font-size: 28px;
+  }
+  .menu, .nosotros, .contacto {
+    padding: 40px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card img {
+    width: 60px;
+    height: 60px;
+  }
+}
+.reserva-texto {
+  font-size: 18px;
+  font-weight: bold;
+  color: #a06a2c;
+  margin-bottom: 25px;
+}
