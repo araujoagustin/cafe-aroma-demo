@@ -32,7 +32,10 @@ const btnVolver = document.getElementById('btnVolver');
 const flechaIzq = document.getElementById('flechaIzq');
 const flechaDer = document.getElementById('flechaDer');
 
-const ITEMS_POR_PAGINA = 2;
+function getItemsPorPagina() {
+  return window.innerWidth <= 480 ? 1 : 2;
+}
+
 let categoriaActual = null;
 let indiceActual = 0;
 
@@ -50,8 +53,9 @@ document.querySelectorAll('.cat-btn').forEach(function(btn) {
 function renderizarPagina() {
   carrusel.innerHTML = '';
 
+  const itemsPorPagina = getItemsPorPagina();
   const productos = menuData[categoriaActual];
-  const pagina = productos.slice(indiceActual, indiceActual + ITEMS_POR_PAGINA);
+  const pagina = productos.slice(indiceActual, indiceActual + itemsPorPagina);
 
   pagina.forEach(function(producto) {
     const card = document.createElement('div');
@@ -65,7 +69,7 @@ function renderizarPagina() {
   });
 
   flechaIzq.disabled = indiceActual === 0;
-  flechaDer.disabled = indiceActual + ITEMS_POR_PAGINA >= productos.length;
+  flechaDer.disabled = indiceActual + itemsPorPagina >= productos.length;
 }
 
 btnVolver.addEventListener('click', function() {
@@ -74,16 +78,18 @@ btnVolver.addEventListener('click', function() {
 });
 
 flechaDer.addEventListener('click', function() {
+  const itemsPorPagina = getItemsPorPagina();
   const productos = menuData[categoriaActual];
-  if (indiceActual + ITEMS_POR_PAGINA < productos.length) {
-    indiceActual += ITEMS_POR_PAGINA;
+  if (indiceActual + itemsPorPagina < productos.length) {
+    indiceActual += itemsPorPagina;
     renderizarPagina();
   }
 });
 
 flechaIzq.addEventListener('click', function() {
-  if (indiceActual - ITEMS_POR_PAGINA >= 0) {
-    indiceActual -= ITEMS_POR_PAGINA;
+  const itemsPorPagina = getItemsPorPagina();
+  if (indiceActual - itemsPorPagina >= 0) {
+    indiceActual -= itemsPorPagina;
     renderizarPagina();
   }
 });
