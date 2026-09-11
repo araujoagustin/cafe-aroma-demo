@@ -256,8 +256,11 @@ footer {
   .menu, .nosotros, .contacto {
     padding: 40px 15px;
   }
+}
+
+@media (max-width: 480px) {
   .card {
-    flex: 0 0 110px;
+    flex: 0 0 190px;
   }
   .carrusel-wrapper {
     gap: 6px;
@@ -265,11 +268,12 @@ footer {
   .carrusel {
     gap: 8px;
     padding: 5px;
+    justify-content: center;
   }
   .flecha {
-    width: 28px;
-    height: 28px;
-    font-size: 14px;
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
   }
 }
 .reserva-texto {
