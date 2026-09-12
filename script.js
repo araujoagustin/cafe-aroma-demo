@@ -77,16 +77,11 @@ document.getElementById('formContacto').addEventListener('submit', function(e) {
 
   fetch(form.action, {
     method: 'POST',
-    body: data,
-    headers: { 'Accept': 'application/json' }
+    body: data
   })
-  .then(response => {
-    if (response.ok) {
-      mensajeConfirmacion.textContent = `¡Gracias ${nombre}! Te contactaremos pronto.`;
-      form.reset();
-    } else {
-      mensajeConfirmacion.textContent = 'Hubo un error, intenta de nuevo.';
-    }
+  .then(() => {
+    mensajeConfirmacion.textContent = `¡Gracias ${nombre}! Te contactaremos pronto.`;
+    form.reset();
   })
   .catch(() => {
     mensajeConfirmacion.textContent = 'Hubo un error, intenta de nuevo.';
